@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #08091f;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+/* Main page */
+
+.page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 45px 8%;
+    background:
+        radial-gradient(circle at 80% 20%, #292052 0%, transparent 30%),
+        radial-gradient(circle at 10% 80%, #17163d 0%, transparent 30%),
+        #08091f;
+}
+
+/* Header */
+
+header {
+    max-width: 650px;
+    margin: 0 auto 35px;
+}
+
+.tag {
+    color: #b69cff;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-family: Georgia, serif;
+    font-size: 45px;
+    line-height: 1.1;
+    margin-bottom: 18px;
+}
+
+h1 span {
+    color: #a98cff;
+    font-style: italic;
+}
+
+header p {
+    color: #aaa9c4;
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+
+/* Dashboard */
+
+.dashboard {
+    max-width: 900px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.3fr 0.8fr;
+    gap: 20px;
+}
+
+
+/* Cards */
+
+.form-card,
+.result-card {
+    background: rgba(24, 25, 57, 0.9);
+    border: 1px solid rgba(160, 140, 255, 0.18);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Section headings */
+
+h3 {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #777694;
+    margin: 5px 0 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* Two-column fields */
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.field label,
+.slider-field label {
+    font-size: 11px;
+    color: #bdbbd2;
+}
+
+
+/* Inputs */
+
+input,
+select {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 7px;
+    border: 1px solid #30315b;
+    background: #11132e;
+    color: white;
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #9d82ff;
+}
+
+
+/* Sliders */
+
+.slider-field {
+    margin-bottom: 18px;
+}
+
+.slider-field label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.slider-field label span {
+    color: #a991ff;
+    font-weight: bold;
+}
+
+input[type="range"] {
+    padding: 0;
+    accent-color: #9b7cff;
+    cursor: pointer;
+}
+
+
+/* Button */
+
+button {
+    width: 100%;
+    margin-top: 18px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #8e6cff, #b18cff);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(157, 124, 255, 0.35);
+}
+
+
+/* Result card */
+
+.result-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 450px;
+    text-align: center;
+}
+
+
+/* Gauge */
+
+.gauge {
+    width: 210px;
+    height: 105px;
+    border-radius: 210px 210px 0 0;
+    border: 12px solid #343455;
+    border-bottom: none;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.gauge::before {
+    content: "";
+    position: absolute;
+    left: -12px;
+    bottom: -12px;
+    width: 110px;
+    height: 105px;
+    border-radius: 210px 0 0 0;
+    border-top: 12px solid #a98cff;
+    border-left: 12px solid #a98cff;
+    transform: rotate(0deg);
+}
+
+.score {
+    position: absolute;
+    width: 100%;
+    top: 40px;
+    text-align: center;
+}
+
+.score span {
+    display: block;
+    font-family: Georgia, serif;
+    font-size: 38px;
+    color: #b89cff;
+}
+
+.score small {
+    font-size: 8px;
+    color: #777694;
+    letter-spacing: 1px;
+}
+
+
+/* Status */
+
+.status {
+    border: 1px solid #66549a;
+    color: #b89cff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 9px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.result-card p {
+    max-width: 230px;
+    color: #8e8da8;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* Mobile */
+
+@media (max-width: 750px) {
+
+    .page {
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .result-card {
+        min-height: 350px;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .row {
+        grid-template-columns: 1fr;
+    }
+
+}
